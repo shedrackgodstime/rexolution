@@ -1,5 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
+import ImgLogo from '~/media/logo.png?jsx';
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -45,11 +46,8 @@ export default component$(() => {
             aria-label="Rexolution Vogue"
           >
             {/* Logo mark — shrinks on scroll */}
-            <img
-              src="/logo.png"
+            <ImgLogo
               alt="RV"
-              width={64}
-              height={64}
               class={`transition-all duration-500 group-hover:[filter:drop-shadow(0_0_10px_#D4A017)] ${
                 isScrolled.value ? "h-10 w-auto" : "h-16 w-auto"
               }`}
@@ -117,11 +115,8 @@ export default component$(() => {
         {/* Top — full wordmark + close */}
         <div class="flex items-center justify-between px-6 py-8">
           <div class="flex items-center gap-3">
-            <img
-              src="/logo.png"
+            <ImgLogo
               alt="RV"
-              width={48}
-              height={48}
               class="h-10 w-auto"
             />
             <div class="flex flex-col leading-none gap-[1px]">

@@ -1,5 +1,8 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import ImgLogo from '~/media/logo.png?jsx';
+import ImgHeroLeft from '~/media/editorial-hero-left.png?jsx';
+import ImgHeroRight from '~/media/editorial-hero-right.png?jsx';
 
 export default component$(() => {
   const isVisible = useSignal(false);
@@ -24,11 +27,8 @@ export default component$(() => {
           {/* Left Editorial Image */}
           <div class={`lg:col-span-4 hidden lg:block transition-all duration-1000 delay-300 ${isVisible.value ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
             <div class="aspect-[3/4] overflow-hidden border border-brand-gold/10 relative group">
-              <img 
-                src="/f100df685cc01922cf64f59c927c727d (1).png" 
+              <ImgHeroLeft
                 alt="Editorial Look 1" 
-                width={600}
-                height={800}
                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div class="absolute inset-0 bg-brand-black/40 group-hover:bg-brand-black/0 transition-colors duration-700"></div>
@@ -37,11 +37,8 @@ export default component$(() => {
 
           {/* Center Content */}
           <div class={`lg:col-span-4 flex flex-col items-center text-center transition-all duration-1000 ${isVisible.value ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-            <img 
-              src="/logo.png" 
+            <ImgLogo
               alt="Rexolution Vogue Logo" 
-              width={200}
-              height={200}
               class="w-32 md:w-44 h-auto mb-10"
             />
             <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-brand-gold uppercase leading-[1.1] mb-6">
@@ -61,11 +58,8 @@ export default component$(() => {
           {/* Right Editorial Image */}
           <div class={`lg:col-span-4 transition-all duration-1000 delay-500 ${isVisible.value ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
              <div class="aspect-[3/4] overflow-hidden border border-brand-gold/10 relative group shadow-2xl">
-              <img 
-                src="/668cb479149fa552bea03f5782950c74.png" 
+              <ImgHeroRight
                 alt="Editorial Look 2" 
-                width={600}
-                height={800}
                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div class="absolute inset-0 bg-brand-black/40 group-hover:bg-brand-black/0 transition-colors duration-700"></div>

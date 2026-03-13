@@ -1,5 +1,7 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import ImgLogo from '~/media/logo.png?jsx';
+import ImgEditorialAbout from '~/media/editorial-about.png?jsx';
 
 export default component$(() => {
   const isLoaded = useSignal(false);
@@ -52,11 +54,8 @@ export default component$(() => {
             }`}
           >
             <div class="aspect-[4/6] overflow-hidden bg-brand-surface relative border border-brand-gold/10 rotate-1 lg:rotate-2 hover:rotate-0 transition-transform duration-700 shadow-2xl">
-              <img 
-                src="/ChatGPT Image Mar 13, 2026, 06_54_14 PM.png" 
+              <ImgEditorialAbout
                 alt="Rexolution Vogue Editorial" 
-                width={800}
-                height={1200}
                 class="h-full w-full object-cover scale-110 grayscale hover:grayscale-0 transition-all duration-1000"
               />
               <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay"></div>
@@ -105,7 +104,7 @@ export default component$(() => {
           "Evolve your style until it becomes your <span class="text-brand-gold italic">signature revolution.</span>"
         </blockquote>
         <div class="mt-16 flex flex-col items-center gap-4">
-           <img src="/logo.png" alt="RV" width={60} height={60} class="opacity-30" />
+           <ImgLogo alt="RV" class="w-[60px] opacity-30" />
            <p class="font-body text-[10px] tracking-[0.6em] text-brand-muted uppercase">Rexolution Vogue — Est. 2026</p>
         </div>
       </section>

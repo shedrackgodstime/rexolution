@@ -33,13 +33,9 @@ export default component$(() => {
             >
               {/* Image Container */}
               <div class="relative mb-6 aspect-[4/5] overflow-hidden bg-brand-surface">
-                <img
-                  src={product.image}
+                <product.image
                   alt={product.name}
-                  width={600}
-                  height={750}
                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
                 />
                 <div class="absolute inset-0 bg-brand-black/0 transition-colors duration-500 group-hover:bg-brand-black/20"></div>
                 
