@@ -1,0 +1,35 @@
+name: Auto Empty Commit
+
+on:
+  push:
+    branches:
+      - main # Adjust to your target branch (e.g., master, develop)
+
+permissions:
+  contents: write # Required for pushing commits
+
+jobs:
+  empty_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4 # Sets up GITHUB_TOKEN implicitly for Git operations
+
+      - name: Get Current Branch
+        id: get_branch
+        run: echo "branch=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+
+      - name: Check Commit Author
+        id: check_author
+        run: |
+          AUTHOR=$(git log -1 --pretty=%an)
+          echo "Detected commit author: $AUTHOR"
+          echo "author=$AUTHOR" >> $GITHUB_OUTPUT
+
+      - name: Create Empty Commit
+        if: steps.check_author.outputs.author != 'web-flow'
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git commit --allow-empty -m "Auto commit to trigger Vercel deployment"
+          git push origin ${{ env.branch }}
