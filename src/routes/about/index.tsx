@@ -1,7 +1,6 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import ImgLogo from '~/media/logo.png?jsx';
-import ImgEditorialAbout from '~/media/editorial-about.png?jsx';
+
 
 export default component$(() => {
   const isLoaded = useSignal(false);
@@ -29,7 +28,7 @@ export default component$(() => {
               <div class="h-px w-8 bg-brand-gold/30"></div>
             </div>
 
-            <h1 class="font-display mb-12 text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-brand-text leading-[0.9]">
+            <h1 class="font-display mb-12 text-5xl md:text-8xl lg:text-9xl font-bold tracking-tight text-brand-text leading-[0.9]">
               THE <br /> <span class="text-brand-gold italic">REXOLUTION</span>
             </h1>
 
@@ -52,7 +51,8 @@ export default component$(() => {
               }`}
           >
             <div class="aspect-[4/6] overflow-hidden bg-brand-surface relative border border-brand-gold/10 rotate-1 lg:rotate-2 hover:rotate-0 transition-transform duration-700 shadow-2xl">
-              <ImgEditorialAbout
+              <img
+                src="/images/editorial-about.png"
                 alt="Rexolution Vogue Editorial"
                 class="h-full w-full object-cover scale-110 grayscale hover:grayscale-0 transition-all duration-1000"
               />
@@ -63,7 +63,32 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* ── SECTION 02: BRAND DNA ─────────────────────────── */}
+      {/* ── SECTION 02: VISUAL NARRATIVE ────────────────────── */}
+      <section class="container mx-auto px-6 md:px-12 relative z-10 pt-10 pb-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div 
+            class={`relative aspect-[3/4] overflow-hidden bg-brand-surface border border-brand-gold/10 transition-all duration-1000 delay-500 ease-out ${isLoaded.value ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+          >
+             <img src="/images/editorial-hero-left.png" alt="Rexolution Vision 1" class="h-full w-full object-cover scale-105 grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-100" />
+             <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay pointer-events-none"></div>
+             <div class="absolute bottom-6 left-6 border border-brand-gold/30 bg-brand-black/60 backdrop-blur-md px-4 py-2">
+                <span class="font-body text-[8px] tracking-[0.3em] text-brand-gold uppercase">Look 01</span>
+             </div>
+          </div>
+          
+          <div 
+            class={`relative aspect-[3/4] overflow-hidden bg-brand-surface border border-brand-gold/10 transition-all duration-1000 delay-700 ease-out md:mt-32 ${isLoaded.value ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+          >
+             <img src="/images/editorial-hero-right.png" alt="Rexolution Vision 2" class="h-full w-full object-cover scale-105 grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-100" />
+             <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay pointer-events-none"></div>
+             <div class="absolute bottom-6 right-6 border border-brand-gold/30 bg-brand-black/60 backdrop-blur-md px-4 py-2">
+                <span class="font-body text-[8px] tracking-[0.3em] text-brand-gold uppercase">Look 02</span>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 03: BRAND DNA ─────────────────────────── */}
       <section class="bg-brand-surface/50 border-y border-brand-gold/10 py-32 relative">
         <div class="container mx-auto px-6 md:px-12">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
@@ -96,13 +121,13 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* ── SECTION 03: THE MARK ──────────────────────────── */}
+      {/* ── SECTION 04: THE MARK ──────────────────────────── */}
       <section class="py-40 text-center container mx-auto px-6">
         <blockquote class="font-display text-4xl md:text-6xl text-brand-text leading-tight max-w-5xl mx-auto">
           "Evolve your style until it becomes your <span class="text-brand-gold italic">signature revolution.</span>"
         </blockquote>
         <div class="mt-16 flex flex-col items-center gap-4">
-          <ImgLogo alt="RV" class="w-[60px] opacity-30" />
+          <img src="/images/logo.png" alt="RV" class="w-[60px] opacity-30" />
           <p class="font-body text-[10px] tracking-[0.6em] text-brand-muted uppercase">Rexolution Vogue  Est. 2026</p>
         </div>
       </section>

@@ -32,18 +32,22 @@ export default component$(() => {
 
               <div class="flex flex-col gap-2">
                 <span class="font-body text-[10px] tracking-[0.3em] text-brand-muted uppercase">Phone / WhatsApp</span>
-                <a href="https://wa.me/23400137121451" class="font-body text-xl text-brand-text hover:text-brand-gold transition-colors">+234 001 371 21451</a>
+                <a href="https://wa.me/2349137121451" class="font-body text-xl text-brand-text hover:text-brand-gold transition-colors">+234 913 712 1451</a>
               </div>
 
               <div class="flex flex-col gap-2">
                 <span class="font-body text-[10px] tracking-[0.3em] text-brand-muted uppercase">Digital Presence</span>
                 <div class="flex flex-col gap-3">
-                  <a href="#" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                  <a href="https://www.instagram.com/rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
                     <span class="w-20 text-[10px] tracking-widest text-brand-muted">INSTAGRAM</span>
                     <span>@rexolutionvogue1</span>
                   </a>
-                  <a href="#" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                  <a href="https://www.tiktok.com/@rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
                     <span class="w-20 text-[10px] tracking-widest text-brand-muted">TIKTOK</span>
+                    <span>@rexolutionvogue1</span>
+                  </a>
+                  <a href="https://www.facebook.com/rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                    <span class="w-20 text-[10px] tracking-widest text-brand-muted">FACEBOOK</span>
                     <span>@rexolutionvogue1</span>
                   </a>
                 </div>

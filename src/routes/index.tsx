@@ -1,8 +1,5 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import ImgLogo from '~/media/logo.png?jsx';
-import ImgHeroLeft from '~/media/editorial-hero-left.png?jsx';
-import ImgHeroRight from '~/media/editorial-hero-right.png?jsx';
 
 export default component$(() => {
   const isVisible = useSignal(false);
@@ -27,7 +24,8 @@ export default component$(() => {
           {/* Left Editorial Image */}
           <div class={`lg:col-span-4 hidden lg:block transition-all duration-1000 delay-300 ${isVisible.value ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
             <div class="aspect-[3/4] overflow-hidden border border-brand-gold/10 relative group">
-              <ImgHeroLeft
+              <img
+                src="/images/editorial-hero-left.png"
                 alt="Editorial Look 1"
                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
@@ -37,11 +35,12 @@ export default component$(() => {
 
           {/* Center Content */}
           <div class={`lg:col-span-4 flex flex-col items-center text-center transition-all duration-1000 ${isVisible.value ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-            <ImgLogo
+            <img
+              src="/images/logo.png"
               alt="Rexolution Vogue Logo"
               class="w-32 md:w-44 h-auto mb-10"
             />
-            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-brand-gold uppercase leading-[1.1] mb-6">
+            <h1 class="font-display text-[44px] md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-brand-gold uppercase leading-[1.1] mb-6">
               Rexolution <br /> <span class="text-brand-text italic">Vogue</span>
             </h1>
             <p class="font-body text-xs md:text-sm tracking-[0.45em] text-brand-muted uppercase mb-14 px-4">
@@ -58,7 +57,8 @@ export default component$(() => {
           {/* Right Editorial Image */}
           <div class={`lg:col-span-4 transition-all duration-1000 delay-500 ${isVisible.value ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
             <div class="aspect-[3/4] overflow-hidden border border-brand-gold/10 relative group shadow-2xl">
-              <ImgHeroRight
+              <img
+                src="/images/editorial-hero-right.png"
                 alt="Editorial Look 2"
                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />

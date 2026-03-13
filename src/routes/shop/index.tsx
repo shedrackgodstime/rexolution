@@ -33,7 +33,8 @@ export default component$(() => {
             >
               {/* Image Container */}
               <div class="relative mb-6 aspect-[4/5] overflow-hidden bg-brand-surface">
-                <product.image
+                <img
+                  src={product.image}
                   alt={product.name}
                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -59,7 +60,7 @@ export default component$(() => {
 
               {/* Action Button */}
               <a
-                href={`https://wa.me/23400137121451?text=${encodeURIComponent(product.whatsappMsg)}`}
+                href={`https://wa.me/2349137121451?text=${encodeURIComponent(product.whatsappMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="font-body mt-6 border-brand-gold/20 text-brand-gold hover:border-brand-gold hover:bg-brand-gold hover:text-brand-black w-full py-3 text-center text-[10px] font-bold tracking-brand-wide transition-all duration-500 border uppercase"
