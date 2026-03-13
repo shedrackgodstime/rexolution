@@ -39,21 +39,20 @@ export default component$(() => {
       >
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
 
-          {/* Wordmark — logo mark + brand name */}
+          {/* Wordmark  logo mark + brand name */}
           <Link
             href="/"
             class="group flex items-center gap-3"
             aria-label="Rexolution Vogue"
           >
-            {/* Logo mark — shrinks on scroll */}
+            {/* Logo mark  shrinks on scroll */}
             <ImgLogo
               alt="RV"
-              class={`transition-all duration-500 group-hover:[filter:drop-shadow(0_0_10px_#D4A017)] ${
-                isScrolled.value ? "h-10 w-auto" : "h-16 w-auto"
-              }`}
+              class={`transition-all duration-500 group-hover:[filter:drop-shadow(0_0_10px_#D4A017)] ${isScrolled.value ? "h-10 w-auto" : "h-16 w-auto"
+                }`}
             />
 
-            {/* Brand name — slightly shrinks with logo */}
+            {/* Brand name  slightly shrinks with logo */}
             <div class={`flex flex-col leading-none transition-all duration-500 ${isScrolled.value ? "gap-[1px]" : "gap-[2px]"}`}>
               <span class={`font-display font-bold tracking-[0.25em] text-brand-text group-hover:text-brand-text transition-all duration-300 uppercase ${isScrolled.value ? "text-[11px]" : "text-[14px]"}`}>
                 Rexolution
@@ -72,20 +71,18 @@ export default component$(() => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  class={`group relative font-body text-[11px] font-medium tracking-brand transition-colors duration-300 ${
-                    isActive ? "text-brand-text" : "text-brand-text/50 hover:text-brand-text"
-                  }`}
+                  class={`group relative font-body text-[11px] font-medium tracking-brand transition-colors duration-300 ${isActive ? "text-brand-text" : "text-brand-text/50 hover:text-brand-text"
+                    }`}
                 >
                   {link.name}
-                  <span class={`absolute -bottom-1 left-0 h-px bg-brand-gold transition-all duration-300 ${
-                    isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
-                  }`} />
+                  <span class={`absolute -bottom-1 left-0 h-px bg-brand-gold transition-all duration-300 ${isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
+                    }`} />
                 </Link>
               );
             })}
           </div>
 
-          {/* Mobile menu trigger — Stylized "MENU" */}
+          {/* Mobile menu trigger  Stylized "MENU" */}
           <button
             class="group flex items-center gap-3 md:hidden"
             onClick$={() => (isMobileMenuOpen.value = true)}
@@ -112,7 +109,7 @@ export default component$(() => {
             : "opacity-0 -translate-y-8 pointer-events-none",
         ].join(" ")}
       >
-        {/* Top — full wordmark + close */}
+        {/* Top  full wordmark + close */}
         <div class="flex items-center justify-between px-6 py-8">
           <div class="flex items-center gap-3">
             <ImgLogo
@@ -152,7 +149,7 @@ export default component$(() => {
         {/* Thin gold divider */}
         <div class="mx-6 h-px bg-brand-gold/10" />
 
-        {/* Center — nav links with staggered slide animation */}
+        {/* Center  nav links with staggered slide animation */}
         <div class="flex flex-1 flex-col items-start justify-center gap-8 px-10">
           {navLinks.map((link, i) => {
             const isActive = location.url.pathname === link.href || (link.href !== "/" && location.url.pathname.startsWith(link.href));
@@ -161,9 +158,8 @@ export default component$(() => {
                 key={link.name}
                 href={link.href}
                 onClick$={() => (isMobileMenuOpen.value = false)}
-                class={`font-display text-5xl font-bold tracking-brand transition-all duration-700 ${
-                  isMobileMenuOpen.value ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
-                } ${isActive ? "text-brand-gold" : "text-brand-text hover:text-brand-gold"}`}
+                class={`font-display text-5xl font-bold tracking-brand transition-all duration-700 ${isMobileMenuOpen.value ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+                  } ${isActive ? "text-brand-gold" : "text-brand-text hover:text-brand-gold"}`}
                 style={`transition-delay: ${200 + i * 80}ms`}
               >
                 {link.name}
@@ -172,11 +168,10 @@ export default component$(() => {
           })}
         </div>
 
-        {/* Bottom — tagline + socials */}
-        <div 
-          class={`px-10 pb-12 flex flex-col gap-6 transition-all duration-1000 delay-500 ${
-            isMobileMenuOpen.value ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
+        {/* Bottom  tagline + socials */}
+        <div
+          class={`px-10 pb-12 flex flex-col gap-6 transition-all duration-1000 delay-500 ${isMobileMenuOpen.value ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
         >
           <div class="h-px w-12 bg-brand-gold/40" />
           <p class="font-body text-xs tracking-brand text-brand-muted">
@@ -188,7 +183,7 @@ export default component$(() => {
                 key={s.label}
                 class="font-body text-[10px] tracking-brand text-brand-muted hover:text-brand-gold transition-colors duration-300 cursor-pointer"
               >
-                {s.label} — {s.handle}
+                {s.label}  {s.handle}
               </span>
             ))}
           </div>
