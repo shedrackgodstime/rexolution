@@ -3,26 +3,31 @@ import { routes } from "@qwik-city-plan";
 import { createSitemap } from "./create-sitemap";
 
 export const onGet: RequestHandler = (ev) => {
-  const siteRoutes = routes
-    .map(([route]) => route as string)
-    .filter(route => route !== "/" && route.indexOf("*") === -1 && route.indexOf(":") === -1); // Filter out catchalls and dynamic routes
+  const allRoutes = routes.map(([route]) => route as string);
+  
+  // Filter for clean static routes
+  const staticRoutes = allRoutes.filter(route => 
+    route !== "/" && 
+    !route.includes("*") && 
+    !route.includes(":") &&
+    !route.includes("sitemap.xml")
+  );
 
-  const sitemap = createSitemap([
-    { loc: "/", priority: 1.0 },  // Manually include the root route
-    ...siteRoutes.map((route) => ({
-      loc: route,
-      priority: 0.9,  // Default priority
-    })),
-  ]);
+  const entries = [
+    { loc: "/", priority: 1.0 },
+    ...staticRoutes.map(route => ({
+      loc: route.endsWith("/") ? route : `${route}/`,
+      priority: 0.9
+    }))
+  ];
 
-  console.log("Generated Sitemap Length:", sitemap.length);
-  console.log("Sitemap Start:", sitemap.substring(0, 100));
+  const sitemap = createSitemap(entries);
 
   const response = new Response(sitemap, {
     status: 200,
     headers: { 
-      "Content-Type": "text/xml; charset=utf-8",
-      "Cache-Control": "max-age=0, s-maxage=3600" 
+      "Content-Type": "application/xml; charset=utf-8",
+      "X-Content-Type-Options": "nosniff"
     },
   });
 
