@@ -82,5 +82,19 @@ export const head: DocumentHead = {
       name: "description",
       content: "Explore the latest street luxury pieces from Rexolution Vogue. Evolve your style.",
     },
+    { property: "og:title", content: "The Collection | Rexolution Vogue" },
+    { property: "og:description", content: "Explore the latest street luxury pieces from Rexolution Vogue. Evolve your style." },
   ],
+  scripts: [
+    {
+      props: { type: "application/ld+json" },
+      script: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "The Collection | Rexolution Vogue",
+        "description": "Explore the latest street luxury pieces from Rexolution Vogue.",
+        "url": "https://rexolutionvogue.com/shop"
+      })
+    }
+  ]
 };

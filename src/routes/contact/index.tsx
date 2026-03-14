@@ -114,5 +114,19 @@ export const head: DocumentHead = {
       name: "description",
       content: "Connect with Rexolution Vogue for inquiries and private viewings.",
     },
+    { property: "og:title", content: "Get In Touch | Rexolution Vogue" },
+    { property: "og:description", content: "Connect with Rexolution Vogue for inquiries and private viewings." },
   ],
+  scripts: [
+    {
+      props: { type: "application/ld+json" },
+      script: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Get In Touch | Rexolution Vogue",
+        "description": "Connect with Rexolution Vogue for inquiries and private viewings.",
+        "url": "https://rexolutionvogue.com/contact"
+      })
+    }
+  ]
 };

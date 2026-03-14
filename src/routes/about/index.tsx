@@ -143,5 +143,19 @@ export const head: DocumentHead = {
       name: "description",
       content: "Discover the philosophy behind Rexolution Vogue. Where street energy meets high luxury discipline.",
     },
+    { property: "og:title", content: "The Rexolution | Brand Story" },
+    { property: "og:description", content: "Discover the philosophy behind Rexolution Vogue. Where street energy meets high luxury discipline." },
   ],
+  scripts: [
+    {
+      props: { type: "application/ld+json" },
+      script: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "The Rexolution | Brand Story",
+        "description": "Discover the philosophy behind Rexolution Vogue. Where street energy meets high luxury discipline.",
+        "url": "https://rexolutionvogue.com/about"
+      })
+    }
+  ]
 };

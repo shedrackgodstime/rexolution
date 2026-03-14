@@ -129,5 +129,41 @@ export const head: DocumentHead = {
       name: "description",
       content: "Direction, movement, and revolution. Step into the world of Rexolution Vogue.",
     },
+    { property: "og:title", content: "Rexolution Vogue | Evolve Your Style" },
+    { property: "og:description", content: "Direction, movement, and revolution. Step into the world of Rexolution Vogue." },
+  ],
+  scripts: [
+    {
+      props: { type: "application/ld+json" },
+      script: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rexolution Vogue",
+        "url": "https://rexolutionvogue.com/", // Placeholder domain, swap when live
+        "description": "Street luxury, evolved. Every fit is a direction.",
+      }),
+    },
+    {
+      props: { type: "application/ld+json" },
+      script: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rexolution Vogue",
+        "url": "https://rexolutionvogue.com/",
+        "logo": "https://rexolutionvogue.com/images/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/rexolutionvogue1",
+          "https://www.tiktok.com/@rexolutionvogue1",
+          "https://www.facebook.com/rexolutionvogue1"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+234 913 712 1451",
+            "contactType": "customer service"
+          }
+        ]
+      }),
+    }
   ],
 };
