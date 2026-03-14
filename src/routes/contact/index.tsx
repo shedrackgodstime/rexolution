@@ -1,5 +1,6 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { siteConfig } from "~/site.config";
 
 export default component$(() => {
   const isLoaded = useSignal(false);
@@ -32,21 +33,21 @@ export default component$(() => {
 
               <div class="flex flex-col gap-2">
                 <span class="font-body text-[10px] tracking-[0.3em] text-brand-muted uppercase">Phone / WhatsApp</span>
-                <a href="https://wa.me/2349137121451" class="font-body text-xl text-brand-text hover:text-brand-gold transition-colors">+234 913 712 1451</a>
+                <a href={siteConfig.contact.whatsappLink} class="font-body text-xl text-brand-text hover:text-brand-gold transition-colors">{siteConfig.contact.phone}</a>
               </div>
 
               <div class="flex flex-col gap-2">
                 <span class="font-body text-[10px] tracking-[0.3em] text-brand-muted uppercase">Digital Presence</span>
                 <div class="flex flex-col gap-3">
-                  <a href="https://www.instagram.com/rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                  <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
                     <span class="w-20 text-[10px] tracking-widest text-brand-muted">INSTAGRAM</span>
                     <span>@rexolutionvogue1</span>
                   </a>
-                  <a href="https://www.tiktok.com/@rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                  <a href={siteConfig.socials.tiktok} target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
                     <span class="w-20 text-[10px] tracking-widest text-brand-muted">TIKTOK</span>
                     <span>@rexolutionvogue1</span>
                   </a>
-                  <a href="https://www.facebook.com/rexolutionvogue1" target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
+                  <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" class="font-body text-brand-text hover:text-brand-gold transition-colors flex items-center gap-2">
                     <span class="w-20 text-[10px] tracking-widest text-brand-muted">FACEBOOK</span>
                     <span>@rexolutionvogue1</span>
                   </a>
@@ -123,9 +124,9 @@ export const head: DocumentHead = {
       script: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Get In Touch | Rexolution Vogue",
+        "name": `Get In Touch | ${siteConfig.name}`,
         "description": "Connect with Rexolution Vogue for inquiries and private viewings.",
-        "url": "https://rexolutionvogue.com/contact"
+        "url": `${siteConfig.url}/contact`
       })
     }
   ]

@@ -1,6 +1,7 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { products } from "~/data/products";
+import { siteConfig } from "~/site.config";
 
 export default component$(() => {
   const isLoaded = useSignal(false);
@@ -60,7 +61,7 @@ export default component$(() => {
 
               {/* Action Button */}
               <a
-                href={`https://wa.me/2349137121451?text=${encodeURIComponent(product.whatsappMsg)}`}
+                href={`${siteConfig.contact.whatsappLink}?text=${encodeURIComponent(product.whatsappMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="font-body mt-6 border-brand-gold/20 text-brand-gold hover:border-brand-gold hover:bg-brand-gold hover:text-brand-black w-full py-3 text-center text-[10px] font-bold tracking-brand-wide transition-all duration-500 border uppercase"
@@ -91,9 +92,9 @@ export const head: DocumentHead = {
       script: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "The Collection | Rexolution Vogue",
+        "name": `The Collection | ${siteConfig.name}`,
         "description": "Explore the latest street luxury pieces from Rexolution Vogue.",
-        "url": "https://rexolutionvogue.com/shop"
+        "url": `${siteConfig.url}/shop`
       })
     }
   ]

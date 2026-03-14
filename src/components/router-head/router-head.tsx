@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
+import { siteConfig } from "~/site.config";
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -9,10 +10,9 @@ export const RouterHead = component$(() => {
   const loc = useLocation();
 
   // Extract meta variables with smart fallbacks
-  const urlObj = loc.url;
-  const baseUrl = `${urlObj.protocol}//${urlObj.host}`;
+  const baseUrl = siteConfig.url;
   const ogImage = head.meta.find((m) => m.property === "og:image")?.content || `${baseUrl}/images/editorial-hero-right.png`;
-  const description = head.meta.find((m) => m.name === "description")?.content || "Rexolution Vogue - Street luxury, evolved. Every fit is a direction.";
+  const description = head.meta.find((m) => m.name === "description")?.content || siteConfig.description;
 
   return (
     <>
@@ -24,7 +24,7 @@ export const RouterHead = component$(() => {
       <meta name="theme-color" content="#080808" />
 
       {/* Global Open Graph & Twitter Card SEO */}
-      <meta property="og:site_name" content="Rexolution Vogue" />
+      <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={loc.url.href} />
       <meta property="og:title" content={head.title} />

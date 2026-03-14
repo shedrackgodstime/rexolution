@@ -1,5 +1,6 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { siteConfig } from "~/site.config";
 
 
 export default component$(() => {
@@ -152,9 +153,9 @@ export const head: DocumentHead = {
       script: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "The Rexolution | Brand Story",
+        "name": `The Rexolution | ${siteConfig.name}`,
         "description": "Discover the philosophy behind Rexolution Vogue. Where street energy meets high luxury discipline.",
-        "url": "https://rexolutionvogue.com/about"
+        "url": `${siteConfig.url}/about`
       })
     }
   ]

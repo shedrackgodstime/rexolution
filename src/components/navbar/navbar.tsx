@@ -1,5 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
+import { siteConfig } from "~/site.config";
 
 
 const navLinks = [
@@ -10,8 +11,8 @@ const navLinks = [
 ];
 
 const socials = [
-  { handle: "@rexolutionvogue1", label: "IG" },
-  { handle: "@rexolutionvogue1", label: "TT" },
+  { handle: "@rexolutionvogue1", label: "IG", url: siteConfig.socials.instagram },
+  { handle: "@rexolutionvogue1", label: "TT", url: siteConfig.socials.tiktok },
 ];
 
 export default component$(() => {
@@ -185,12 +186,14 @@ export default component$(() => {
           </p>
           <div class="flex flex-wrap gap-x-8 gap-y-2">
             {socials.map((s) => (
-              <span
+              <a
+                href={s.url}
+                target="_blank" rel="noopener noreferrer"
                 key={s.label}
                 class="font-body text-[10px] tracking-brand text-brand-muted hover:text-brand-gold transition-colors duration-300 cursor-pointer"
               >
                 {s.label}  {s.handle}
-              </span>
+              </a>
             ))}
           </div>
         </div>

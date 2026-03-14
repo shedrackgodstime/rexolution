@@ -1,5 +1,6 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { siteConfig } from "~/site.config";
 
 export default component$(() => {
   const isVisible = useSignal(false);
@@ -138,9 +139,9 @@ export const head: DocumentHead = {
       script: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Rexolution Vogue",
-        "url": "https://rexolutionvogue.com/", // Placeholder domain, swap when live
-        "description": "Street luxury, evolved. Every fit is a direction.",
+        "name": siteConfig.name,
+        "url": siteConfig.url,
+        "description": siteConfig.description,
       }),
     },
     {
@@ -148,18 +149,18 @@ export const head: DocumentHead = {
       script: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Rexolution Vogue",
-        "url": "https://rexolutionvogue.com/",
-        "logo": "https://rexolutionvogue.com/images/logo.png",
+        "name": siteConfig.name,
+        "url": siteConfig.url,
+        "logo": siteConfig.logo,
         "sameAs": [
-          "https://www.instagram.com/rexolutionvogue1",
-          "https://www.tiktok.com/@rexolutionvogue1",
-          "https://www.facebook.com/rexolutionvogue1"
+          siteConfig.socials.instagram,
+          siteConfig.socials.tiktok,
+          siteConfig.socials.facebook
         ],
         "contactPoint": [
           {
             "@type": "ContactPoint",
-            "telephone": "+234 913 712 1451",
+            "telephone": siteConfig.contact.phone,
             "contactType": "customer service"
           }
         ]
