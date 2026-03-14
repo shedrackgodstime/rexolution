@@ -48,7 +48,7 @@ export default component$(() => {
               Evolve Your Style...
             </p>
             <a
-              href="/shop"
+              href="/collection"
               class="font-body border border-brand-gold text-brand-gold px-14 py-5 text-[10px] font-bold tracking-[0.35em] uppercase hover:bg-brand-gold hover:text-brand-black transition-all duration-500"
             >
               The Collection

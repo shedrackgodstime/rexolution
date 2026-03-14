@@ -50,23 +50,20 @@ export default component$(() => {
               </div>
 
               {/* Product Info */}
-              <div class="flex flex-col gap-1 px-1">
+              <div class="flex flex-col gap-1 px-1 text-center">
                 <h3 class="font-display text-lg font-bold tracking-wide text-brand-text">
                   {product.name}
                 </h3>
-                <p class="font-body text-sm font-medium tracking-brand text-brand-gold">
-                  {product.price}
-                </p>
               </div>
 
               {/* Action Button */}
               <a
-                href={`${siteConfig.contact.whatsappLink}?text=${encodeURIComponent(product.whatsappMsg)}`}
+                href={product.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="font-body mt-6 border-brand-gold/20 text-brand-gold hover:border-brand-gold hover:bg-brand-gold hover:text-brand-black w-full py-3 text-center text-[10px] font-bold tracking-brand-wide transition-all duration-500 border uppercase"
               >
-                Inquire via WhatsApp
+                Buy in Boutique
               </a>
             </div>
           ))}
@@ -94,7 +91,7 @@ export const head: DocumentHead = {
         "@type": "CollectionPage",
         "name": `The Collection | ${siteConfig.name}`,
         "description": "Explore the latest street luxury pieces from Rexolution Vogue.",
-        "url": `${siteConfig.url}/shop`
+        "url": `${siteConfig.url}/collection`
       })
     }
   ]

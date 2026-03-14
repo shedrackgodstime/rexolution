@@ -20,6 +20,7 @@ export const RouterHead = component$(() => {
 
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="google-site-verification" content="1KFbzw_58r7gM3IyMRI6L0JFr-8QpXPhrJm0VC9-_PU" />
       <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
       <meta name="theme-color" content="#080808" />
 

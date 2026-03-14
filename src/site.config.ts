@@ -13,4 +13,5 @@ export const siteConfig = {
     phone: "+234 913 712 1451",
     whatsappLink: "https://wa.me/2349137121451",
   },
+  externalShopUrl: "https://rexolutionvogue.com", // The existing e-commerce site
 };
