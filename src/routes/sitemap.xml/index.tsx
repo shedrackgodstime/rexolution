@@ -8,7 +8,7 @@ export const onGet: RequestHandler = (ev) => {
     .filter(route => route !== "/" && route.indexOf("*") === -1 && route.indexOf(":") === -1); // Filter out catchalls and dynamic routes
 
   const sitemap = createSitemap([
-    { loc: "/", priority: 1 },  // Manually include the root route
+    { loc: "/", priority: 1.0 },  // Manually include the root route
     ...siteRoutes.map((route) => ({
       loc: route,
       priority: 0.9,  // Default priority
