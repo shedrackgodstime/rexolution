@@ -15,9 +15,15 @@ export const onGet: RequestHandler = (ev) => {
     })),
   ]);
 
+  console.log("Generated Sitemap Length:", sitemap.length);
+  console.log("Sitemap Start:", sitemap.substring(0, 100));
+
   const response = new Response(sitemap, {
     status: 200,
-    headers: { "Content-Type": "text/xml" },
+    headers: { 
+      "Content-Type": "text/xml; charset=utf-8",
+      "Cache-Control": "max-age=0, s-maxage=3600" 
+    },
   });
 
   ev.send(response);
