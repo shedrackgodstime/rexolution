@@ -13,5 +13,11 @@ export const siteConfig = {
     phone: "+234 913 712 1451",
     whatsappLink: "https://wa.me/2349137121451",
   },
-  externalShopUrl: "https://rexolutionvogue.com", // The existing e-commerce site
+  externalShopUrl: "https://rexolutionvogue.com",
+  pages: [
+    { path: "/", priority: 1.0 },
+    { path: "/collection/", priority: 0.9 },
+    { path: "/about/", priority: 0.8 },
+    { path: "/contact/", priority: 0.8 },
+  ],
 };

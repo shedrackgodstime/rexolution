@@ -1,33 +1,31 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { routes } from "@qwik-city-plan";
-import { createSitemap } from "./create-sitemap";
+import { siteConfig } from "../../site.config";
 
 export const onGet: RequestHandler = (ev) => {
-  const allRoutes = routes.map(([route]) => route as string);
-  
-  // Filter for clean static routes
-  const staticRoutes = allRoutes.filter(route => 
-    route !== "/" && 
-    !route.includes("*") && 
-    !route.includes(":") &&
-    !route.includes("sitemap.xml")
-  );
+  const baseUrl = siteConfig.url.endsWith("/") 
+    ? siteConfig.url.slice(0, -1) 
+    : siteConfig.url;
 
-  const entries = [
-    { loc: "/", priority: 1.0 },
-    ...staticRoutes.map(route => ({
-      loc: route.endsWith("/") ? route : `${route}/`,
-      priority: 0.9
-    }))
-  ];
+  const urls = siteConfig.pages.map(page => {
+    const path = page.path.startsWith("/") ? page.path : `/${page.path}`;
+    return `
+  <url>
+    <loc>${baseUrl}${path}</loc>
+    <priority>${page.priority.toFixed(1)}</priority>
+  </url>`;
+  }).join("");
 
-  const sitemap = createSitemap(entries);
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`.trim();
 
   const response = new Response(sitemap, {
     status: 200,
-    headers: { 
+    headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "X-Content-Type-Options": "nosniff"
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600"
     },
   });
 

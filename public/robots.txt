@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rexolutionvogue.com/sitemap.xml
+Sitemap: https://rexolutionvogue.vercel.app/sitemap.xml
